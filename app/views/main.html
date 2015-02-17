@@ -5,10 +5,10 @@
     <form name="myForm" role="form" ng-submit="addItem()">
         <div class="row">
             <p class="input-group">
-                <input type="text" class="form-control" name="item" required ng-model="item" placeholder="Enter this field what you want to sort">
+                <input type="text" class="form-control" name="item" required ng-model="item" ui-validate="{dublicate : 'notDublicate($value)' }" placeholder="Enter this field what you want to sort">
                 <span class="input-group-btn"><input type="submit" class="btn btn-primary" value="Add" ng-disabled="myForm.$invalid"></span>
             </p>
-            <p ng-messages="myForm.item.$error">{{myForm.item.$error}}</p>
+            <p ng-messages="myForm.item.$error.required">{{myForm.item.$error | json}}</p>
 
             <!-- Item list -->
             <div ui-sortable ng-model="results">
