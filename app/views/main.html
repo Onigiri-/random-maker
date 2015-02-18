@@ -20,10 +20,11 @@
             <p><label>Total:</label>{{results.length}}</p>
             <div ui-sortable ng-model="results">
                 <div ng-repeat="result in results">
-                    <label ng-show="$index === 0">TEAM A</label>
-                    <label ng-show="$index === results.length / 2">TEAM B</label>
+                    <label ng-show="$index == 0">TEAM A</label>
+                    <label ng-show="$index == devideTeam()">TEAM B</label>
                     <p class="input-group" style="padding:5px 10px; cursor: move;">
-                        <input type="text" class="form-control" ng-model="result">
+                        <input type="text" class="form-control" ng-model="result.name">
+                        <span class="input-group-btn"><button type="button" class="btn btn-primary" ng-click="changeStatus(result)" aria-label="Change">固定</button></span>
                         <span class="input-group-btn"><button type="button" class="btn btn-danger" ng-click="removeItem($index)" aria-label="Remove">X</button></span>
                     </p>
                 </div>

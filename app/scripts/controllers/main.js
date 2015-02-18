@@ -26,7 +26,10 @@ function MainCtrl($scope, localStorageService) {
     };
 
     $scope.addItem = function(item) {
-        $scope.results.push($scope.item);
+        $scope.results.push({
+            name: $scope.item,
+            status: false
+        });
         $scope.item = '';
     };
 
@@ -34,18 +37,22 @@ function MainCtrl($scope, localStorageService) {
         $scope.results.splice(index, 1);
     };
     //results[0]とresults[r]を複数回入れ替えることでshuffleしてみた
-    //
+    //result.status = true のとき、入れ替えない
     $scope.shuffleResults = function() {
-        var results = $scope.results;
-        for (var i = 0; i < results.length; i++) {
-            for (var j = 0; j < results.length; j++) {
-                var r = Math.floor(Math.random() * results.length),
-                    a = results[0],
-                    b = results[r];
-                results[r] = a;
-                results[0] = b;
+            var results = $scope.results;
+            for (var i = 0; i < results.length * results.length; i++) {
+                    var r = Math.floor(Math.random() * results.length),
+                        a = results[0],
+                        b = results[r];
+                    results[r] = a;
+                    results[0] = b;
             };
-        };    
+    };
+    $scope.devideTeam = function() {
+        return $scope.results.length / 2 | 0;
+    };
+    $scope.changeStatus = function(result) {
+        result.status = !result.status;
     };
 }
 angular.module('randomMakerApp')
