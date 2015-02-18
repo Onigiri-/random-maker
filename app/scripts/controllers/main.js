@@ -20,20 +20,31 @@ function MainCtrl($scope, localStorageService) {
     //ui.utilsに入っているui-validateを使って重複する値を入力した場合にtrueを返すようにします
     //indexOf(value)は値が見つからない場合、-1を返します
     //
-    $scope.notDublicate = function(value){
+    $scope.notDublicate = function(value) {
         var dublicateList = $scope.results;
         return dublicateList.indexOf(value) === -1;
     };
 
-    $scope.addItem = function() {
-		$scope.results.push($scope.item);
-		$scope.item = '';
-		return $scope.results;
+    $scope.addItem = function(item) {
+        $scope.results.push($scope.item);
+        $scope.item = '';
     };
 
     $scope.removeItem = function(index) {
         $scope.results.splice(index, 1);
-        return $scope.results;
+    };
+    $scope.shuffleResults = function() {
+        var results = $scope.results;
+        for (var i = 0; i < results.length; i++) {
+            for (var j = 0; j < results.length; j++) {
+                var r = Math.floor(Math.random() * results.length),
+                    a = results[0],
+                    b = results[r];
+                results[r] = a;
+                results[0] = b;
+            };
+        };
+        
     };
 }
 angular.module('randomMakerApp')
