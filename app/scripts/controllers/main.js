@@ -40,14 +40,15 @@ function MainCtrl($scope, localStorageService) {
     //result.status = true のとき、入れ替えない
     //$scope.results[i].statusがtrueのとき処理を止める
     $scope.shuffleResults = function() {
+
+        //fisher-yates法
         var results = $scope.results;
-        for (var i = 0; i < results.length; i++) {
-            if (results[i].status !== false) {}
-                var r = Math.floor(Math.random() * results.length),
-                    a = results[0],
-                    b = results[r];
-                results[r] = a;
-                results[0] = b;
+        var n = results.length;
+        for (var i = n - 1; i > 0; i--){
+            var j = Math.floor(Math.random() * (i + 1));
+            var tmp = results[i];
+            results[i] = results[j];
+            results[j] = tmp;
         }
     };
     $scope.devideTeam = function() {
