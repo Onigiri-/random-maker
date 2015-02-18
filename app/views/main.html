@@ -21,7 +21,7 @@
             <div ui-sortable ng-model="results">
                 <div ng-repeat="result in results">
                     <label ng-show="$index === 0">TEAM A</label>
-                    <!-- <label ng-show="$index === {{results.length}} / 2">TEAM B</label> -->
+                    <label ng-show="$index === results.length / 2">TEAM B</label>
                     <p class="input-group" style="padding:5px 10px; cursor: move;">
                         <input type="text" class="form-control" ng-model="result">
                         <span class="input-group-btn"><button type="button" class="btn btn-danger" ng-click="removeItem($index)" aria-label="Remove">X</button></span>

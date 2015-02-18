@@ -33,6 +33,8 @@ function MainCtrl($scope, localStorageService) {
     $scope.removeItem = function(index) {
         $scope.results.splice(index, 1);
     };
+    //results[0]とresults[r]を複数回入れ替えることでshuffleしてみた
+    //
     $scope.shuffleResults = function() {
         var results = $scope.results;
         for (var i = 0; i < results.length; i++) {
