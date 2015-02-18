@@ -8,8 +8,10 @@
                 <input type="text" class="form-control" name="item" required ng-model="item" ui-validate="{dublicate : 'notDublicate($value)' }" placeholder="Enter this field what you want to sort">
                 <span class="input-group-btn"><input type="submit" class="btn btn-primary" value="Add" ng-disabled="myForm.$invalid"></span>
             </p>
-            <p ng-messages="myForm.item.$error.required">{{myForm.item.$error | json}}</p>
-
+            <span class="help-inline text-danger" ng-messages="myForm.item.$error" ng-if="myForm.item.$dirty || myForm.dublicate">
+            <p ng-message="required">必須項目です。</p>
+            <p ng-message="dublicate">既に登録されています。</p>
+            </span>
             <!-- Item list -->
             <div ui-sortable ng-model="results">
             <p class="input-group" ng-repeat="result in results" style="padding:5px 10px; cursor: move;">

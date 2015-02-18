@@ -18,7 +18,7 @@ function MainCtrl($scope, localStorageService) {
     }, true);
 
     //ui.utilsに入っているui-validateを使って重複する値を入力した場合にtrueを返すようにします
-    //indexOf(value)は値が一致した場合、-1を返します
+    //indexOf(value)は値が見つからない場合、-1を返します
     //
     $scope.notDublicate = function(value){
         var dublicateList = $scope.results;
