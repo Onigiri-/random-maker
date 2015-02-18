@@ -43,8 +43,7 @@ function MainCtrl($scope, localStorageService) {
                 results[r] = a;
                 results[0] = b;
             };
-        };
-        
+        };    
     };
 }
 angular.module('randomMakerApp')
