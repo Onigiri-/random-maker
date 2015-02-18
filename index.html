@@ -1,116 +1,89 @@
-<!doctype html>
-<html class="no-js">
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
 
-<head>
-    <meta charset="utf-8">
-    <title>ShuffleMaker</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width">
-    <link rel="stylesheet" href="stylesheets/stylesheet.css">
-</head>
-
-<body ng-app="randomMakerApp">
-    <!--[if lt IE 7]>
-      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
-    <!-- Add your site or application content here -->
-    <div class="header">
-        <div class="navbar navbar-default" role="navigation">
-            <div class="container">
-                <div class="navbar-header">
+    <title>shuffle-maker by Onigiri-</title>
+  </head>
 
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#js-navbar-collapse">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
+  <body>
+    <header>
+      <div class="inner">
+        <h1>shuffle-maker</h1>
+        <h2>チーム分けするときに使えるサービス</h2>
+        <a href="https://github.com/Onigiri-/random-maker" class="button"><small>View project on</small> GitHub</a>
+      </div>
+    </header>
 
-                    <a class="navbar-brand" href="#/">ShuffleMaker</a>
-                </div>
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+          <h1>
+<a id="random-maker" class="anchor" href="#random-maker" aria-hidden="true"><span class="octicon octicon-link"></span></a>random-maker</h1>
 
-                <div class="collapse navbar-collapse" id="js-navbar-collapse">
+<p>This project is generated with <a href="https://github.com/yeoman/generator-angular">yo angular generator</a>
+version 0.11.1.</p>
 
-                    <ul class="nav navbar-nav">
-                        <li class="active"><a href="#/">Home</a>
-                        </li>
-                        <li><a ng-href="#/about">About</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+<h2>
+<a id="build--development" class="anchor" href="#build--development" aria-hidden="true"><span class="octicon octicon-link"></span></a>Build &amp; development</h2>
+
+<p>Run <code>grunt</code> for building and <code>grunt serve</code> for preview.</p>
+
+<h2>
+<a id="testing" class="anchor" href="#testing" aria-hidden="true"><span class="octicon octicon-link"></span></a>Testing</h2>
+
+<p>Running <code>grunt test</code> will run the unit tests with karma.</p>
+
+<h2>
+<a id="目的" class="anchor" href="#%E7%9B%AE%E7%9A%84" aria-hidden="true"><span class="octicon octicon-link"></span></a>目的</h2>
+
+<p>野球やサッカーなど複数人数で遊ぶときなど、メンバーを２つのチームに分ける場合に使えるサービスを目指します。</p>
+
+<h2>
+<a id="機能実装済み" class="anchor" href="#%E6%A9%9F%E8%83%BD%E5%AE%9F%E8%A3%85%E6%B8%88%E3%81%BF" aria-hidden="true"><span class="octicon octicon-link"></span></a>機能（実装済み）</h2>
+
+<p>angular-local-storageを使って、ローカルストレージに'results'という配列を保存しています。
+angular-ui-sortableを使って、マウスで配列の並びを変更できます。
+angular-ui-validateを使って、重複する値は登録できないように'notDublicate'というカスタムバリデーションを作りました。
+ng-disabledを使って、requiredとdublicateの値がfalseにならない限り、Addボタンは'disabled'を返すようにしました。
+ng-messagesを使って、エラーの種類によって異なるメッセージを出すようにしました。</p>
+
+<h2>
+<a id="機能予定" class="anchor" href="#%E6%A9%9F%E8%83%BD%E4%BA%88%E5%AE%9A" aria-hidden="true"><span class="octicon octicon-link"></span></a>機能（予定）</h2>
+
+<p>野球のピッチャーやサッカーのキーパーなど、必ず必要なポジションがある場合は、必ず同じ数にわかれるようにしたい。例えば、野球で2チームに分ける場合、ピッチャーを2名をAとBに分けてから、残りの16名を分けるなど。</p>
+
+<h2>
+<a id="バグ" class="anchor" href="#%E3%83%90%E3%82%B0" aria-hidden="true"><span class="octicon octicon-link"></span></a>バグ</h2>
+        </section>
+
+        <aside id="sidebar">
+          <a href="https://github.com/Onigiri-/random-maker/zipball/master" class="button">
+            <small>Download</small>
+            .zip file
+          </a>
+          <a href="https://github.com/Onigiri-/random-maker/tarball/master" class="button">
+            <small>Download</small>
+            .tar.gz file
+          </a>
+
+          <p class="repo-owner"><a href="https://github.com/Onigiri-/random-maker"></a> is maintained by <a href="https://github.com/Onigiri-">Onigiri-</a>.</p>
+
+          <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
+        </aside>
+      </div>
     </div>
 
-    <div class="container">
-        <h2>Random Maker</h2>
-
-        <!-- Items input -->
-        <form name="myForm" role="form" ng-submit="addItem()">
-            <div class="row">
-                <p class="input-group">
-                    <input type="text" class="form-control" name="item" required ng-model="item" ui-validate="{dublicate : 'notDublicate($value)' }" placeholder="Enter this field what you want to sort">
-                    <span class="input-group-btn"><input type="submit" class="btn btn-primary" value="Add" ng-disabled="myForm.$invalid"></span>
-                </p>
-                <span class="help-inline text-danger" ng-messages="myForm.item.$error" ng-if="myForm.item.$dirty || myForm.dublicate">
-                <p ng-message="required">必須項目です。</p>
-                <p ng-message="dublicate">既に登録されています。</p>
-            </span>
-                <p class="input-group">
-                    <input type="number" class="form-control" ng-model="number" placeholder="Enter a number of teams">
-                    <span class="input-group-btn"><button type="button" class="btn btn-primary" ng-click="shuffleResults()" aria-label="shuffle">shuffle!!</button></span>
-                </p>
-                <!-- Item list -->
-                <p>
-                    <label>Total:</label>{{results.length}}</p>
-                <div ui-sortable ng-model="results">
-                    <div ng-repeat="result in results">
-                        <label ng-show="$index === 0">TEAM A</label>
-                        <!-- <label ng-show="$index === {{results.length}} / 2">TEAM B</label> -->
-                        <p class="input-group" style="padding:5px 10px; cursor: move;">
-                            <input type="text" class="form-control" ng-model="result">
-                            <span class="input-group-btn"><button type="button" class="btn btn-danger" ng-click="removeItem($index)" aria-label="Remove">X</button></span>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </form>
-    </div>
-
-    <div class="footer">
-        <div class="container">
-            <p><span class="glyphicon glyphicon-heart"></span> from gg.</p>
-        </div>
-    </div>
-
-
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
-    <script>
-    ! function(A, n, g, u, l, a, r) {
-        A.GoogleAnalyticsObject = l, A[l] = A[l] || function() {
-                (A[l].q = A[l].q || []).push(arguments)
-            }, A[l].l = +new Date, a = n.createElement(g),
-            r = n.getElementsByTagName(g)[0], a.src = u, r.parentNode.insertBefore(a, r)
-    }(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-
-    ga('create', 'UA-XXXXX-X');
-    ga('send', 'pageview');
-    </script>
-
-    <!-- build:js(.) scripts/vendor.js -->
-    <!-- bower:js -->
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.13/angular.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-sortable/0.13.3/sortable.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-local-storage/0.1.5/angular-local-storage.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/X.Y.Z/angular-messages.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-utils/0.1.1/angular-ui-utils.min.js"></script>
-    <!-- endbower -->
-    <!-- endbuild -->
-
-    <!-- build:js({.tmp,app}) scripts/scripts.js -->
-    <script src="javascripts/main.js"></script>
-    <!-- endbuild -->
-</body>
-
+  
+  </body>
 </html>
